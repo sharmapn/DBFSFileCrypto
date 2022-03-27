@@ -5,7 +5,7 @@ The DBFS encryption solution is developed for use in ECMSDK – an open-source D
 The DBFS encryption solution consists of three parts, all of which are available as separate PL/SQL files in the Github repository
 1. Catalogs.sql - the database tables storing the encryption keys for single-user and multi-user files. 
 2. CMSDK_Spatial_Crypt.sql - the encryption-decryption solution is implmented in this PL/SQL package, and 
-3. CMSDK_SessionBasedTrogger.sql - the CMSDK user-session based trigger that calls the encryption and decryption procedures from the above CMSDK_SpatialCrypt_package. 
+3. CMSDK_SessionBasedTrigger.sql - the CMSDK user-session based trigger that calls the encryption and decryption procedures from the above CMSDK_SpatialCrypt_package. 
 
 This repository contains details about the CMSDK Spatial Crypt in a document and a package containing the code.
 
