@@ -7,7 +7,7 @@ The DBFS encryption solution consists of three parts, available as separate PL/S
 2. CMSDK_Spatial_Crypt.sql - the encryption-decryption solution  implemented in this PL/SQL package, and 
 3. CMSDK_SessionBasedTrigger.sql - the CMSDK user-session based trigger that calls the encryption and decryption procedures from the above CMSDK_SpatialCrypt_package. 
 
-Also, the UserInteractionModel_DFSEncryptionSolution.pdf file is an Appendix that includes the following:
+Also, the UserInteractionModel_DFSEncryptionSolution.pdf file is an Appendix, that includes the following:
 - Appendix A - Detailed	encryption-decryption times for spatial files within DBFS  
 - Appendix B - Metadata and content storage in CMSDK
 - Appendix C - Proposed security solution demonstration for use with classical shared folders
