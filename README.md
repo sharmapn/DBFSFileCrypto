@@ -5,7 +5,7 @@ The DBFS encryption solution is developed for use in ECMSDK – an open-source D
 The DBFS encryption solution consists of three parts, available as separate PL/SQL files <br/>
 1. Catalogs.sql - the database tables storing the encryption keys for single-user and multi-user files. 
 2. ECMSDK_SpatialCrypt.sql - the encryption-decryption solution  implemented in this PL/SQL package, and 
-3. ECMSDK_SessionBasedTrigger.sql - the user-session based trigger that calls the encryption and decryption procedures within the ECMSDK_SpatialCrypt package. 
+3. ECMSDK_SessionBasedTrigger.sql - the user-session based trigger that calls the encryption and decryption procedures within the above package. 
 
 Also, included is an Appendix (_within the UserInteractionModel_DFSEncryptionSolution.pdf file_), 
 that includes the following:
