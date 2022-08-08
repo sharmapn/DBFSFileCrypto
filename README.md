@@ -9,8 +9,8 @@ The DBFS encryption solution consists of three parts, available as separate PL/S
 
 Also, the UserInteractionModel_DFSEncryptionSolution.pdf file is an Appendix, that includes the following:
 - Appendix A - Detailed	encryption-decryption times for spatial files within DBFS  
-- Appendix B - Metadata and content storage in ECMSDK
-- Appendix C - Proposed security solution demonstration for use with classical shared folders
-- Appendix D - Protection for multi-user files 
+- Appendix B - Oracle ECMSDK session-based trigger
+- Appendix C - DBFS encryption solution - (_showing catalog tables_)
+- Appendix D - Security solution use with classical shared folders 
 - Appendix E - Security solution implemented within database-driven GIS Web portals & Web maps 
 
