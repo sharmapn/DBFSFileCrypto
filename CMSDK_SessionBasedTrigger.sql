@@ -1,5 +1,5 @@
--- This script contains the DBFS user-session based trigger implemented within Oracle CMSDK. 
--- On each CMSDK user session  creation and termination, the session-based trigger is used to 
+-- This script contains the DBFS user-session based trigger implemented within Oracle ECMSDK. 
+-- On each ECMSDK user session  creation and termination, the session-based trigger is used to 
 -- call decryption and encryption procedure respectively. 
 
 -- Those two procedures first obtain the single-user as well as the multi-user GIS files 
@@ -12,24 +12,24 @@
 -- the user exists, then the files are decrypted or encrypted.
 
 CREATE OR REPLACE TRIGGER dec_enc_spatial_files
- BEFORE INSERT OR DELETE ON ifssys.odmz_session
+ BEFORE INSERT OR DELETE ON ecmsdk.odmz_session
  FOR EACH ROW
  DECLARE
  v_sessions NUMBER;
- CURSOR active_CMSDK_user_sessions IS
- SELECT USERID FROM IFSSYS.ODMZ_SESSION
+ CURSOR active_ECMSDK_user_sessions IS
+ SELECT USERID FROM ECMSDK.ODMZ_SESSION
  WHERE USERID = (:NEW.USERID) OR USERID = (:OLD.USERID);
  BEGIN
- OPEN active_CMSDK_user_sessions;
- FETCH active_CMSDK_user_sessions INTO v_sessions;
+ OPEN active_ECMSDK_user_sessions;
+ FETCH active_ECMSDK_user_sessions INTO v_sessions;
  -- Only if no existing sessions of this user, then decrypt or encrypt
- IF active_CMSDK_user_sessions%NOTFOUND THEN
+ IF active_ECMSDK_user_sessions%NOTFOUND THEN
  IF INSERTING THEN
- CMSDK_spatial_crypt.get_10gcmsdk_user_files_dec (:NEW.USERID);
+ CMSDK_spatial_crypt.get_11gecmsdk_user_files_dec (:NEW.USERID);
  ELSIF DELETING THEN
- CMSDK_spatial_crypt.get_10gcmsdk_user_files_enc (:OLD.USERID);
+ CMSDK_spatial_crypt.get_11gecmsdk_user_files_enc (:OLD.USERID);
  END IF;
  END IF;
- CLOSE active_CMSDK_user_sessions;
+ CLOSE active_ECMSDK_user_sessions;
 END dec_enc_spatial_files;
 /
