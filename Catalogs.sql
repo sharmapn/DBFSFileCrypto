@@ -19,8 +19,8 @@ ALTER SYSTEM SET encryption key identified by "hdgr57fnle39dncv";
 -- A. Key storage for single-user spatial files 
 -- Table to store each user’s keys for encrypting and decrypting all of their spatial files.
 
-CREATE TABLE CMSDK_UserSpecificFile_keys(
-  cmsdk_user_id   NUMBER,             -- CMSDK user id
+CREATE TABLE ECMSDK_UserSpecificFile_keys(
+  ecmsdk_user_id   NUMBER,             -- CMSDK user id
   enc_key         VARCHAR2(100)  ENCRYPT USING 'AES128',  -- encryption key
   dec_key         VARCHAR2(100)  ENCRYPT USING 'AES128'   -- decryption key
 );
@@ -29,10 +29,10 @@ CREATE TABLE CMSDK_UserSpecificFile_keys(
 -- the following SQL commands. For instance, to add and delete cryptographic keys for all files 
 -- owned by GIS user Scott, identified by CMSDK user id 55514, the SQL commands are:
 
-INSERT INTO CMSDK_UserSpecificFile_keys (cmsdk_user_id, enc_key, dec_key) 
+INSERT INTO ECMSDK_UserSpecificFile_keys (ecmsdk_user_id, enc_key, dec_key) 
 VALUES (55514,'G#^*!JS^MN!468h6', 'G#^*!JS^MN!468h6'); 
 
-DELETE FROM CMSDK_UserSpecificFile_keys WHERE CMSDK_user_id = 55514;
+DELETE FROM ECMSDK_UserSpecificFile_keys WHERE CMSDK_user_id = 55514;
 
 -- The similarity of the keys stored in this table for specific users depend on whether 
 -- symmetric or asymmetric algorithms are used. To retrieve the encryption keys of a specific CMSDK 
@@ -43,14 +43,14 @@ DELETE FROM CMSDK_UserSpecificFile_keys WHERE CMSDK_user_id = 55514;
 -- The following script describes the table used to store the user temporary LOB locators 
 -- internally by the package.
 
-CREATE TABLE CMSDK_user_temp_lobs(
-  CMSDK_user_id   NUMBER,                    -- CMSDK user id
-  CMSDK_file_id   NUMBER,                      -- User File id
-  CMSDK_file_name VARCHAR(100),       -- CMSDK file name
+CREATE TABLE ECMSDK_user_temp_lobs(
+  ECMSDK_user_id   NUMBER,             -- ECMSDK user id
+  ECMSDK_file_id   NUMBER,             -- User File id
+  ECMSDK_file_name VARCHAR(100),       -- ECMSDK file name
   templob         BLOB                                      -- temporary LOB
 );
 
--- The table is populated with the CMSDK user’s file temporary LOB locator within the 
+-- The table is populated with the ECMSDK user’s file temporary LOB locator within the 
 -- temporary tablespace as soon as the file is decrypted. Upon user logout, the LOB locator 
 -- is used to copy the LOB back into its original location.
 
@@ -60,8 +60,8 @@ CREATE TABLE CMSDK_user_temp_lobs(
 -- the encryption and decryption keys for that file, and the state of file that is checked 
 -- before trying to re-encrypt or re-decrypt files in order to prevent corruption.
 
-CREATE TABLE CMSDK_MultiUserFile_keys_state (
-  CMSDK_filepath   VARCHAR2(500),        -- Full CMSDK filepath
+CREATE TABLE ECMSDK_MultiUserFile_keys_state (
+  ECMSDK_filepath  VARCHAR2(500),        -- Full ECMSDK filepath
   enc_key          VARCHAR2(100) ENCRYPT USING 'AES128',  -- encryption key
   dec_key          VARCHAR2(100) ENCRYPT USING 'AES128',  -- decryption key
   file_encrypted   VARCHAR2(5) DEFAULT 'FALSE' -- file state
@@ -72,24 +72,24 @@ CREATE TABLE CMSDK_MultiUserFile_keys_state (
 -- and the encryption and decryption keys of the file. For instance, to add and delete spatial file 
 -- spottext.MAP with full CMSDK filepath “projects\classified\spottext.MAP”, the SQL commands are:
 
-INSERT INTO CMSDK_MultiUserFile_keys_state (CMSDK_filepath,file_state, enc_key,dec_key) 
+INSERT INTO ECMSDK_MultiUserFile_keys_state (ECMSDK_filepath,file_state, enc_key,dec_key) 
 VALUES (projects\classified\spottext.MAP’,'hfghfdg657hvg^*T' ,'hfghfdg657hvg^*T');
 
-DELETE FROM CMSDK_MultiUserFile_keys_state 
-WHERE CMSDK_filepath LIKE “projects\classified\spottext.MAP’;
+DELETE FROM ECMSDK_MultiUserFile_keys_state 
+WHERE ECMSDK_filepath LIKE “projects\classified\spottext.MAP’;
 
 -- Once again, the similarity of the keys stored in this table for specific users depend 
 -- on whether symmetric or asymmetric encryption algorithms are used. To retrieve the 
--- encryption keys of a specific CMSDK user from this table, the get_file_enc_key()  
+-- encryption keys of a specific ECMSDK user from this table, the get_file_enc_key()  
 -- and get_file_dec_key()functions are used.
 
 -- D.  Multi-user file catalog
 
 -- Table that stores the filepath and the different CMSDK users who require access to them in decrypted form. 
 
-CREATE TABLE CMSDK_MultiUserFile_user_catalog(
-    CMSDK_filepath  VARCHAR2(500),    -- CMSDK MultiUserFile Full filepath
-    CMSDK_user_id   NUMBER                  -- CMSDK user id
+CREATE TABLE ECMSDK_MultiUserFile_user_catalog(
+    ECMSDK_filepath  VARCHAR2(500),    -- ECMSDK MultiUserFile Full filepath
+    ECMSDK_user_id   NUMBER            -- ECMSDK user id
 );
 
 -- Using the following SQL commands, the administrator can insert or delete files, CMSDK users, 
@@ -97,9 +97,9 @@ CREATE TABLE CMSDK_MultiUserFile_user_catalog(
 -- For instance, to add and delete cryptographic keys for all files owned by GIS user Scott, 
 -- identified by CMSDK user id 55514, the SQL commands are:
 
-INSERT INTO CMSDK_MultiUserFile_user_catalog (CMSDK_user_id, CMSDK _filepath) 
+INSERT INTO ECMSDK_MultiUserFile_user_catalog (ECMSDK_user_id, ECMSDK _filepath) 
 VALUES (55514, ‘projects\classified\spottext.MAP’); 
 
-DELETE FROM CMSDK_MultiUserFile_user_catalog 
-WHERE CMSDK_user_id = 55514 
-AND CMSDK_filepath LIKE ‘projects\classified\spottext.MAP’; 
+DELETE FROM ECMSDK_MultiUserFile_user_catalog 
+WHERE ECMSDK_user_id = 55514 
+AND ECMSDK_filepath LIKE ‘projects\classified\spottext.MAP’; 
