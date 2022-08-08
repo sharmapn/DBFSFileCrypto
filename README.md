@@ -7,7 +7,7 @@ The DBFS encryption solution consists of three parts, available as separate PL/S
 2. ECMSDK_SpatialCrypt.sql - the encryption-decryption solution  implemented in this PL/SQL package, and 
 3. ECMSDK_SessionBasedTrigger.sql - the user-session based trigger that calls the encryption and decryption procedures in the above package. 
 
-Also, included is an Appendix (_within the UserInteractionModel_DFSEncryptionSolution.pdf file_), 
+Also, included is an Appendix (_within the UserInteractionModel.pdf file_), 
 that includes the following:
 - Appendix A - Detailed	encryption-decryption times for spatial files within DBFS  
 - Appendix B - Oracle ECMSDK session-based trigger
