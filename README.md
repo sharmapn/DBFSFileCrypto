@@ -9,8 +9,10 @@ The DBFS encryption solution consists of three parts, available as separate PL/S
 2. ECMSDK_SpatialCrypt.sql - the encryption-decryption solution  implemented in this PL/SQL package, and 
 3. ECMSDK_SessionBasedTrigger.sql - the user-session based trigger that calls the encryption and decryption procedures in the above package. 
 
+These tables and the encrypted column definitions are only possible with the Oracle database version 10g Release 2 and onwards.
+
 **Usage:**
-All the three SQL scripts are to be executed by the Database administrator (DBA). The DBA can use a command line facility, such as SQLPlus and issue these commands from his/her Oracle account. Additional details are provided in each of the scripts.
+All the three SQL scripts are to be executed by the Database administrator (DBA). The DBA can use a command line facility, such as SQLPlus and issue these commands from his/her Oracle account. Additional details are provided in each of the scripts. 
 
 The Oracle wallet can be initialised by issuing the following command, which will: create a wallet, create a master key for the entire database, and open the wallet.
 
@@ -18,7 +20,6 @@ The Oracle wallet can be initialised by issuing the following command, which wil
 
 Subsequently, after each table creation with an encrypted column specification will cause the TDE to create a separate key for each table. 
 
-These tables and the encrypted column definitions are only possible with the Oracle database version 10g Release 2 and onwards.
 
 Also, included is an Appendix (_within the UserInteractionModel.pdf file_), 
 that includes the following:
