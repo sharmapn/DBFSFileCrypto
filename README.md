@@ -16,7 +16,8 @@ All the three SQL scripts are to be executed by the Database administrator (DBA)
 
 ```SQL > @Catalogs.sql
    SQL > @ECMSDK_SpatialCrypt.sql
-   SQL > @ECMSDK_SessionBasedTrigger.sql```
+   SQL > @ECMSDK_SessionBasedTrigger.sql
+```
 
 Additional details are provided in each of the scripts. 
 
