@@ -11,7 +11,7 @@ The DBFS encryption solution consists of three parts, available as separate PL/S
 
 These tables and the encrypted column definitions are only possible with the Oracle database version 10g Release 2 and onwards.
 
-**Usage:**
+**Script Usage:**
 All the three SQL scripts are to be executed by the Database administrator (DBA). The DBA can use a command line facility, such as SQLPlus and issue these commands from his/her Oracle account as follows, in this order. 
 
 ```
@@ -22,12 +22,16 @@ SQL > @ECMSDK_SessionBasedTrigger.sql
 
 Additional details are provided in each of the scripts. 
 
+**Oracle Wallet Setup:**
+
 The Oracle wallet can be initialised by issuing the following command, which will: create a wallet, create a master key for the entire database, and open the wallet.
 
 ```SQL > ALTER SYSTEM SET encryption key identified by "hdgr57fnle39dncv";```
 
 Subsequently, after each table creation with an encrypted column specification will cause the TDE to create a separate key for each table. 
 
+
+**Additional Appendix material:**
 
 Also, included is an Appendix (_within the UserInteractionModel.pdf file_), 
 that includes the following:
