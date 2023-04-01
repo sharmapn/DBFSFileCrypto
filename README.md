@@ -24,7 +24,7 @@ Additional details are provided in each of the scripts.
 
 The Oracle wallet can be initialised by issuing the following command, which will: create a wallet, create a master key for the entire database, and open the wallet.
 
-```ALTER SYSTEM SET encryption key identified by "hdgr57fnle39dncv";```
+```SQL > ALTER SYSTEM SET encryption key identified by "hdgr57fnle39dncv";```
 
 Subsequently, after each table creation with an encrypted column specification will cause the TDE to create a separate key for each table. 
 
