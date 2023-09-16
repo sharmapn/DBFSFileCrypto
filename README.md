@@ -1,4 +1,4 @@
-# DBFSFileEncDec
+# DBFSFileCrypto
 
 The DBFS File Crypto package is developed for file encryption decryption solution for use within ECMSDK – an open-source DBFS product. As such, it is coded in Oracle PL/SQL for implementation within the (free) Oracle 11G XE database. However, the code structure can be used to implement the encryption solution within other DBFS products, such as IBM DB2 Content Manager. 
 
