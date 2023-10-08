@@ -33,7 +33,7 @@ Subsequently, after each table creation with an encrypted column specification w
 
 **Additional Appendix material:**
 
-Also included is an Appendix (_within the UserInteractionModel.pdf file_), 
+Also included is an Appendix (_within the Appendix_DBFSSpatialCrypt.pdf file_), 
 that includes the following:
 - Appendix A - Detailed	encryption-decryption times for spatial files within DBFS  
 - Appendix B - Oracle ECMSDK session-based trigger
