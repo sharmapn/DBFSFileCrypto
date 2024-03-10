@@ -3,6 +3,7 @@
 The DBFS File Crypto package is developed for file encryption decryption solution for use within ECMSDK, an open-source DBFS product. As such, it is coded in Oracle PL/SQL for implementation within the (free) Oracle 11G XE database. However, the code structure can be used to implement the encryption solution within other DBFS products, such as IBM DB2 Content Manager. 
 
 **Setup ECMSDK**
+
 The following video shows how to start ECMSDK on Windows OS. 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/gR6l1tUspwQ/0.jpg)](https://www.youtube.com/watch?v=gR6l1tUspwQ)
 
@@ -10,6 +11,7 @@ The following video demonstrates the use of the encryption-decryption solution.
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/zMJV5zV0-zs/0.jpg)](https://www.youtube.com/watch?v=zMJV5zV0-zs)
 
 **Initial Encryption-Decryption Scripts to get started**
+
 The encryption and decryption scripts in the folder "gettingStartedEncryptionDecryption" will assist in getting started on encryption-decryption within ECMSDK.
 
 The source code of the DBFS File Crypto Package first obtains details of single-user and multi-user GIS files specified for encryption by DBFS users and then calls either the encryption or the decryption procedures. The procedures within this package are executed upon GIS-DBFS user session creation and termination in ECMSDK. 
