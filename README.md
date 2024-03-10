@@ -1,3 +1,5 @@
+#DBFSFileCrypto
+
 **Setup ECMSDK**
 
 The following video shows how to start ECMSDK on Windows OS. 
@@ -12,7 +14,7 @@ The following video demonstrates the use of the encryption-decryption solution.
 
 The encryption and decryption scripts in the folder "gettingStartedEncryptionDecryption" will assist in getting started on encryption-decryption within ECMSDK.
 
-# DBFSFileCrypto
+**DBFSFileCrypto Package**
 
 The DBFS File Crypto package is developed for file encryption decryption solution for use within ECMSDK, an open-source DBFS product. As such, it is coded in Oracle PL/SQL for implementation within the (free) Oracle 11G XE database. However, the code structure can be used to implement the encryption solution within other DBFS products, such as IBM DB2 Content Manager. 
 
