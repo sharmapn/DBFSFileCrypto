@@ -2,7 +2,7 @@
 
 **Setup ECMSDK**
 
-The following video shows how to start ECMSDK on Windows OS. 
+The following video shows how to start ECMSDK on Windows OS. (click on video image)
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/gR6l1tUspwQ/0.jpg)](https://www.youtube.com/watch?v=gR6l1tUspwQ)
 
