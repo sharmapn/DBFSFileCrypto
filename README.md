@@ -53,9 +53,9 @@ Subsequently, after each table creation with an encrypted column specification w
 
 Also included is an Appendix (_within the Appendix_DBFSSpatialCrypt.pdf file_), 
 that includes the following:
-- Appendix A - Detailed	encryption-decryption times for spatial files within DBFS  
-- Appendix B - Oracle ECMSDK session-based trigger
-- Appendix C - DBFS encryption solution - (_showing catalog tables_)
-- Appendix D - Security solution use with classical shared folders 
-- Appendix E - Security solution implemented within database-driven GIS Web portals & Web maps 
+- Appendix B - Detailed	encryption-decryption times for spatial files within DBFS  
+- Appendix C - Oracle ECMSDK session-based trigger
+- Appendix D - DBFS encryption solution - (_showing catalog tables_)
+- Appendix E - Security solution use with classical shared folders 
+- Appendix F - Security solution implemented within database-driven GIS Web portals & Web maps 
 
