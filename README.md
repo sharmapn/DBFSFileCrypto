@@ -58,3 +58,5 @@ that includes the following:
 - Appendix D - Security solution use with classical shared folders 
 - Appendix E - Security solution implemented within database-driven GIS Web portals & Web maps 
 - Appendix F - The algorithm pseodocode for the encryption process. 
+
+The Appendix Figures prefixed with S in the manuscript (for example, S8 and S9) refer to the corresponding figures in Appendix D, that is Figure D8 and D9.
