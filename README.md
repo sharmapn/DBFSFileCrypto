@@ -1,8 +1,12 @@
 # DBFSFileCrypto
 
+This repository contains the code for our A Usable Encryption Solution for File-Based Geospatial Data within a Database File System paper https://www.mdpi.com/2624-800X/4/2/15
+
+Note that the Appendix S figures mentioned in the paper are contained within Appendix D in this repositoty. 
+
 **Setup ECMSDK**
 
-The following video shows how to start ECMSDK on Windows OS. (click on video image)
+The following YouTube video YouTube video (https://www.youtube.com/watch?v=gR6l1tUspwQ) shows how to start ECMSDK on Windows OS. Please click on video image.
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/gR6l1tUspwQ/0.jpg)](https://www.youtube.com/watch?v=gR6l1tUspwQ)
 
