@@ -2,7 +2,7 @@
 
 This repository contains the code for our A Usable Encryption Solution for File-Based Geospatial Data within a Database File System paper https://www.mdpi.com/2624-800X/4/2/15
 
-Note that the Appendix S figures mentioned in the paper are contained within Appendix D in this repositoty. 
+Note that the Appendix S figures mentioned in the paper are contained within Appendix D (Security solution use with classical shared folders) in this repository. 
 
 **Setup ECMSDK**
 
